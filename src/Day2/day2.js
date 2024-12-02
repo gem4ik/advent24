@@ -13,10 +13,10 @@ fs.readFile(filePath, 'utf8', (_, data) => {
 
     const correctReports = filteredUpDownLevels.filter( level => {
         const intArr = level.split(' ').map(Number)
-        return intArr.every((int, i) => i === 0 || Math.abs(intArr[i - 1] - int) < 3);
+        return intArr.every((int, i) => i === 0 || Math.abs(intArr[i - 1] - int) <= 3);
     })
 
 
     // console.log(filteredUpDownLevels)
-    console.log(correctReports)
+    console.log(correctReports.length)
 })
